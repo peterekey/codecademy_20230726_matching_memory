@@ -1,11 +1,12 @@
 // Add import statements below
-import PropTypes from 'prop-types'
-
+import propTypes from 'prop-types'
+import { useSelector } from 'react-redux'
+import { selectVisibleIDs } from '../../boardSlice';
 let cardLogo = "https://static-assets.codecademy.com/Courses/Learn-Redux/matching-game/codecademy_logo.png";
 
 export const Card = ({ id, contents }) => {
   // Add selected data and dispatch variables below
-  
+  const visibleIDs = useSelector(selectVisibleIDs)
   
   // flip card action
   const flipHandler = (id) => {
@@ -22,7 +23,7 @@ export const Card = ({ id, contents }) => {
 
   // 1st if statement
   // implement card id array membership check
-  if (false) {
+  if (visibleIDs.includes(id)) {
     cardText = contents;
     click = () => {};
   }
@@ -46,7 +47,7 @@ export const Card = ({ id, contents }) => {
   );
 };
 
-Card.PropTypes = {
-  id: PropTypes.string,
-  contents: PropTypes.string
+Card.propTypes = {
+  id: propTypes.number,
+  contents: propTypes.string
 }

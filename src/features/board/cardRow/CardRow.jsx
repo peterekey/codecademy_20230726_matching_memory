@@ -1,5 +1,5 @@
 import { Card } from './card/Card.jsx';
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
 export const CardRow = ({ cards }) => {
   const content = cards.map(card => 
@@ -13,5 +13,5 @@ export const CardRow = ({ cards }) => {
 };
 
 CardRow.propTypes = {
-    cards: PropTypes.array
+    cards: propTypes.array
 }
