@@ -1,12 +1,52 @@
-// Add import statement below
+// Add import statements below
+import PropTypes from 'prop-types'
 
+let cardLogo = "https://static-assets.codecademy.com/Courses/Learn-Redux/matching-game/codecademy_logo.png";
 
-export const Score = () => {
-  // Add selected data variable below
+export const Card = ({ id, contents }) => {
+  // Add selected data and dispatch variables below
   
+  
+  // flip card action
+  const flipHandler = (id) => {
+    // Add action dispatch below
+    
+  };
+
+  let cardStyle = 'resting'
+  let click = () => flipHandler(id);
+  
+  let cardText = (
+    <img src={cardLogo} className="logo-placeholder" alt="Card option" />
+  );
+
+  // 1st if statement
+  // implement card id array membership check
+  if (false) {
+    cardText = contents;
+    click = () => {};
+  }
+
+  // 2nd if statement
+  // implement card id array membership check
+  if (false) {
+    cardStyle = 'matched';
+  }
+
+  // 3rd if statement
+  // implement number of flipped cards check
+  if (false) {
+    click = () => {};
+  }
 
   return (
-    // implement selected data inside <div>
-    <div className="score-container">Matched: 0</div>
+    <button onClick={click} className={`card ${cardStyle}`}>
+      {cardText}
+    </button>
   );
 };
+
+Card.PropTypes = {
+  id: PropTypes.string,
+  contents: PropTypes.string
+}

@@ -1,9 +1,9 @@
-import { combineReducers, createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit'
 
-import { boardReducer } from '../features/board/boardSlice.js';
+import { boardReducer } from '../features/board/boardSlice.jsx';
 
-const rootReducer = combineReducers({
-  board: boardReducer,
-});
-
-export const store = createStore(rootReducer);
+export default configureStore({
+  reducer: {
+    board: boardReducer
+  }
+})
